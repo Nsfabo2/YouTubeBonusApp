@@ -6,6 +6,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.GridView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -91,10 +92,12 @@ title= "Youtube - What if"
     }
 
     private fun initializeRV(){
-        val recyclerView: RecyclerView = findViewById(R.id.VideosRV)
+        /*val recyclerView: RecyclerView = findViewById(R.id.VideosRV)
         recyclerView.adapter = VideoRecyclerViewAdapter(videos, player)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.setHasFixedSize(true)
+        recyclerView.setHasFixedSize(true)*/
+        val gridView: GridView = findViewById(R.id.VideosGV)
+        gridView.adapter = GridAdapter(videos, player,this@MainActivity)
     }
 
     private fun checkInternet(){
